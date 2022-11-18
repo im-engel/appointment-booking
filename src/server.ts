@@ -6,6 +6,10 @@ const port = 9000;
 
 app.set('json spaces', 2);
 
+app.get("/", async (_: Request, res: Response) => {
+  res.redirect("/appointments");
+});
+
 app.get("/appointments", async (_: Request, res: Response) => {
   const data = await fs.readFile('data.json');
   res.json(JSON.parse(data.toString()));
