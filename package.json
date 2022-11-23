@@ -1,26 +1,43 @@
 {
   "name": "full-stack-challenge",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "git@github.com:eugenelabs/full-stack-challenge.git",
   "author": "Eugene",
   "license": "MIT",
   "scripts": {
-    "start": "parcel src/index.html",
-    "server": "nodemon src/server.ts"
+    "start": "parcel src/client/main/index.html",
+    "server": "nodemon src/server/server.ts",
+    "dev": "concurrently \"yarn run start\" \"yarn run server\""
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.14",
+    "@mui/material": "^5.0.0",
+    "concurrently": "^7.6.0",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "ts-node": "^10.9.1"
+    "lodash": "^4.17.21",
+    "node-cache": "^5.1.2",
+    "nodemon": "^2.0.20",
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^18.2.0",
+    "ts-node": "^10.9.1",
+    "zustand": "^4.1.4"
   },
   "devDependencies": {
+    "@emotion/babel-plugin": "^11.10.5",
     "@types/express": "^4.17.14",
-    "@types/react": "^17.0.11",
-    "@types/react-dom": "^17.0.7",
+    "@types/lodash": "^4.14.189",
+    "@types/react": "^17.0.0 || ^18.0.0",
+    "@types/react-dom": "^18.0.9",
+    "body-parser": "^1.20.1",
+    "flow-bin": "^0.193.0",
+    "parcel": "^2.8.0",
     "parcel-bundler": "^1.12.5",
-    "typescript": "^4.3.2"
+    "sass": "^1.56.1",
+    "typescript": "^4.3.2",
+    "uuid": "^9.0.0"
   },
   "nodemonConfig": {
     "ext": "ts,tsx,json"
