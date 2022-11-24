@@ -5,7 +5,7 @@ export interface AppointmentsState {
 
     setLoading: (payload: boolean) => void;
     setSort: (payload: string) => void;
-    setAppoinments: (payload: string) => void;
+    setAppointments: (payload: string) => void;
     deleteAppointment: (id: string) => void;
     addAppointment: () => void;
 }

@@ -1,3 +1,38 @@
+## Eugene's full stack developer challenge - Changes
+A simple appointment booking that lists grouped appointment by either clinician name or date
+
+## To run
+From your terminal, run the command below
+```bash
+yarn run dev
+```
+
+## Application Screenshots
+Appointments grouped by Date
+![ListAppointmentGroupedByDate](./images/ListAppointmentGroupedByDate.png)
+
+Appointments grouped by Clinician Name
+![ListAppointmentGroupedByClinicianName](./images/ListAppointmentGroupedByClinicianName.png)
+
+Appointments with newly added appointments grouped by Date
+![WithAddedAppointmentGroupedByDate](./images/WithAddedAppointmentGroupedByDate.png)
+
+Appointments with newly added appointments grouped by Clinician Name
+![WithAddedAppointmentGroupedByDate](./images/WithAddedAppointmentGroupedByClinicianName.png)
+
+## Additional Packages Installed
+- concurrently
+- zustand
+- cache-node
+- uuid
+- cors
+- material ui
+- body-parser
+- jest
+- ts-jest
+
+##
+
 # Eugene's full stack developer challenge
 Welcome to the coding challenge. We use this challenge to help guide our technical interview. Things to keep in mind before you start:
 - Please don't spend more than 4 hours on this project, if you're getting stuck on something then feel free to skip it and we can chat through it during the interview.

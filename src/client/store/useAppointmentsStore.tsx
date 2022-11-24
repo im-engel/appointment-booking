@@ -9,42 +9,42 @@ export const useAppointmentStore = create<AppointmentsState>((set) => ({
     sort: "clinician_name",
 
     setLoading: (payload) => {
-        set(() => ({ loading: payload }));
+        set(() => ({loading: payload}));
     },
 
     setSort: (payload) => {
         const updatedSort = payload.replace(" ", "_").toLowerCase()
-        set(() => ({ sort: updatedSort }));
+        set(() => ({sort: updatedSort}));
     },
 
-    setAppoinments: async (sort) => {
+    setAppointments: async (sort) => {
         try {
-            set(() => ({ loading: true }));
+            set(() => ({loading: true}));
             const response = await fetch(`${constants.API_URL}/appointments/list/${sort}`)
             const appointmentData = await response.json();
-            set(() => ({ appointments: appointmentData ?? [] }));
+            set(() => ({appointments: appointmentData ?? []}));
         } catch (error) {
             console.log(error)
         } finally {
-            set(() => ({ loading: false }));
+            set(() => ({loading: false}));
         }
     },
 
     deleteAppointment: async (id: string) => {
         try {
-            set(() => ({ loading: true }));
+            set(() => ({loading: true}));
             const response = await fetch(`${constants.API_URL}/appointments/delete/${id}`, {method: "DELETE"})
             await response.json();
         } catch (error) {
             console.log(error)
         } finally {
-            set(() => ({ loading: false }));
+            set(() => ({loading: false}));
         }
     },
 
     addAppointment: async () => {
         try {
-            set(() => ({ loading: true }));
+            set(() => ({loading: true}));
             const requestBody = {
                 startDate: new Date(),
                 endDate: commonFunctions.addHours(new Date(), commonFunctions.randomHour()),
@@ -53,14 +53,14 @@ export const useAppointmentStore = create<AppointmentsState>((set) => ({
             }
             const response = await fetch(`${constants.API_URL}/appointments/add`, {
                 method: "POST",
-                headers: { 'Content-Type': 'application/json' }, 
-                body:JSON.stringify(requestBody)
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(requestBody)
             })
             await response.json();
         } catch (error) {
             console.log(error)
         } finally {
-            set(() => ({ loading: false }));
+            set(() => ({loading: false}));
         }
     }
 }))

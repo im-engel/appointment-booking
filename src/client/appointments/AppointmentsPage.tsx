@@ -1,32 +1,31 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import _ from "lodash"
-import { useAppointmentStore } from '../store/useAppointmentsStore';
+import {useAppointmentStore} from '../store/useAppointmentsStore';
 import AppointmentHeader from './Components/AppointmentHeader';
-import { Stack } from '@mui/material';
+import {Stack} from '@mui/material';
 import AppointmentTable from './Components/AppointmentTable/Table';
 
 const AppointmentsPage = () => {
-    const {appointments, sort,  setAppoinments} = useAppointmentStore()
+    const {sort, setAppointments} = useAppointmentStore()
 
     useEffect(() => {
-        _.delay(() => setAppoinments(sort), 2000)
-        //setAppoinments(sort)
+        _.delay(() => setAppointments(sort), 2000)
+        //setAppointments(sort)
     }, [])
 
     useEffect(() => {
-        setAppoinments(sort)
+        setAppointments(sort)
     }, [sort])
 
-    
+
     return <div style={{"margin": "20px"}}>
         <Stack>
             <AppointmentHeader/>
             <div style={{marginTop: "20px"}}>
                 <AppointmentTable/>
-            </div>            
+            </div>
         </Stack>
-        
-    </div> 
+    </div>
 }
 
 export default AppointmentsPage

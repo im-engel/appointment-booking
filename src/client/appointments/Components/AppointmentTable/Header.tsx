@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react"
-import { TableCell, TableHead, TableRow } from "@mui/material"
-import { useAppointmentStore } from "../../../store/useAppointmentsStore"
+import {TableCell, TableHead, TableRow} from "@mui/material"
+import {useAppointmentStore} from "../../../store/useAppointmentsStore"
 
 const headerCaption = (caption: string) => {
     switch (caption) {
@@ -17,13 +17,13 @@ const Header = () => {
     const {sort} = useAppointmentStore()
     const [columnHeader, setColumnHeader] = useState<string>(headerCaption(sort));
 
-    useEffect(()=> {
+    useEffect(() => {
         setColumnHeader(headerCaption(sort))
     }, [sort])
 
     return <TableHead>
         <TableRow>
-            <TableCell />
+            <TableCell/>
             <TableCell>{columnHeader}</TableCell>
         </TableRow>
     </TableHead>
